@@ -12,16 +12,13 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>{letters}</p>
         <button className='button-click' onClick={() => setLetters('Hello react!')}>Show 'Hello react!'</button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
         <a
           className="App-link"
           href="https://github.com/maz47zu/test-app"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Link do Repo
+          Link to test-app repository
         </a>
       </header>
     </div>
