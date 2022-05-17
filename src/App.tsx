@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { InputForm } from './InputForm';
 
 
 function App() {
@@ -8,9 +9,11 @@ function App() {
 
   return (
     <div className="App">
+      
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>{letters}</p>
+        <InputForm defaultValue={'hello Form'}/>
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
+        {/* <p>{letters}</p>
         <button className='button-click' onClick={() => setLetters('Hello react!')}>Show 'Hello react!'</button>
         <a
           className="App-link"
@@ -19,7 +22,7 @@ function App() {
           rel="noopener noreferrer"
         >
           Link to test-app repository
-        </a>
+        </a> */}
       </header>
     </div>
   );
