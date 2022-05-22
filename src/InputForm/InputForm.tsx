@@ -4,20 +4,11 @@ interface InputFormProps {
     defaultValue?: string;
 }
 
-const storageFormKey = 'costam';
-
-// class SimpleComponent extends ReactComponent {
-//     constructor(){
-//         super();
-//     }
-//     public render(){
-//         return <div>bede</div>
-//     }
-// }
+const storageFormKey = 'inputInStorage';
 
 export const InputForm = (props?: InputFormProps) => {
     const [displayError,setDisplayError] = useState<boolean>(false)
-    const [inputValue, setInputValue] = useState<string>('Input')
+    const [inputValue, setInputValue] = useState<string>('')
     const [errorMessage, setErrorMessage] = useState<string>()
 
     const formReadyToSubmit = !(displayError && !inputValue);
@@ -46,25 +37,30 @@ export const InputForm = (props?: InputFormProps) => {
         }
     }, [inputValue])
 
+    //if localStorage is empty then data is taken from props (DefaultLogin)
+    //if localStorage isn't empty then last submitted login is loaded from localStorage
     useEffect(() => {
         let valueToSet = '';
         const localStorageData = localStorage.getItem(storageFormKey)
         if (!!localStorageData){
+            console.log(localStorageData)
             valueToSet = localStorageData;
+            setInputValue(valueToSet);
             //setInputValue(localStorageData)
         } else {
             if (!!props?.defaultValue){
                 valueToSet = props?.defaultValue;
+                setInputValue(valueToSet);
             }
         }
         
     },  [])
 
     return <div style={{display: 'flex', flexDirection:'column',flexWrap:'wrap'}}>
-        {displayError && <div style={{color:'red'}}>{errorMessage}</div>}
+        {displayError && <div style={{color:'#3decf2', }}>{errorMessage}</div>}
         <div>User name:</div>
-        <input onInput={handleInputChange} value={inputValue} type="text" />
+        <input className='input-field' onInput={handleInputChange} value={inputValue} type="text"/>
         <br/>
-        <button onClick={handleSubmit} disabled={!formReadyToSubmit}>Submit data</button>
+        <button className='button-click' onClick={handleSubmit} disabled={!formReadyToSubmit || displayError}>Submit data</button>
     </div>
 }

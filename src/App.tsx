@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       
       <header className="App-header">
-        <InputForm defaultValue={'hello Form'}/>
+        <InputForm defaultValue={'LastLogin'}/>
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         {/* <p>{letters}</p>
         <button className='button-click' onClick={() => setLetters('Hello react!')}>Show 'Hello react!'</button>
