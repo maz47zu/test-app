@@ -12,8 +12,7 @@ function App() {
       
       <header className="App-header">
         <InputForm defaultValue={'LastLogin'}/>
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        {/* <p>{letters}</p>
+        <p>{letters}</p>
         <button className='button-click' onClick={() => setLetters('Hello react!')}>Show 'Hello react!'</button>
         <a
           className="App-link"
@@ -22,7 +21,7 @@ function App() {
           rel="noopener noreferrer"
         >
           Link to test-app repository
-        </a> */}
+        </a>
       </header>
     </div>
   );
