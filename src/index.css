@@ -17,6 +17,7 @@ code {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   background-color: black;
+  border-color: #3decf2;
   color: #3decf2;
   font-size: 20px;
   padding: 10px 60px;
@@ -25,14 +26,55 @@ code {
   cursor: pointer;
 }
 
+.button-click:hover {
+  background-color:#08061c;
+  border-color: #a6f1f5;
+  color: #a6f1f5;
+  transition: 0.7s;
+}
+
+.button-navbar {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  color: #ffffff;
+  border-radius: 5px;
+  margin: 10px 0px;
+  cursor: pointer;
+}
+
+.button-navbar:hover {
+  background-color:#08061c;
+  border-color: #a6f1f5;
+  color: #a6f1f5;
+  transition: 0.7s;
+}
+.button-sidebar {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  color: #3decf2;
+  border-color: #3decf2;
+  border-radius: 5px;
+  margin: 10px 0px;
+  cursor: pointer;
+}
+
+.button-sidebar:hover {
+  background-color:#08061c;
+  border-color: #a6f1f5;
+  color: #a6f1f5;
+  transition: 0.7s;
+}
 .input-field {
   text-align: center;
   font-family: 'Lucida Console';
   background-color: black;
+  border-color: #3decf2;
   border-radius: 5px;
   margin: 5px 0px;
   color: #3decf2;
   padding: 10px 60px;
   font-size: 25px;
-  border: 1px;
+  border: 2px;
 }

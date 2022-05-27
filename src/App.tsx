@@ -1,32 +1,31 @@
-import React, { useState } from 'react';
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-import { BrowserRouter } from 'react-router-dom';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import { InputForm } from './InputForm';
- 
+import Navigation from './navigation/Navigation';
+import FirstLesson from './routes/FirstLesson';
+import AboutMe from './routes/AboutMe';
+
+const routesPaths = {
+    about:'about',
+    home:'/',
+    page404:'*',
+    form:'form',
+    firstLesson:'firstLesson'
+}
+
 function App() {
-  const [letters, setLetters] = useState<string>("Here will appear 'Hello react!' when you'll push button below.")
-
   return (
-    <div className="App">
-      
-      <header className="App-header">
-        {/* <InputForm defaultValue={'LastLogin'}/> */}
-        <InputForm defaultValue={'LastLogin'}/>
-        <p>{letters}</p>
-        <button className='button-click' onClick={() => setLetters('Hello react!')}>Show 'Hello react!'</button>
-        <a
-          className="App-link"
-          href="https://github.com/maz47zu/test-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Link to test-app repository
-        </a>
-
-      </header>
-      
-    </div>
+    <BrowserRouter>
+          <Navigation/>
+          <Routes>
+              <Route path={`/${routesPaths.home}`} element={<InputForm defaultValue={'LastLogin'}/>}/>
+              <Route path={`/${routesPaths.page404}`} element={<div>404</div>}/>
+              <Route path={`/${routesPaths.about}`} element={<AboutMe/>}/>
+              <Route path={`/${routesPaths.form}`} element={<div>Form</div>}/>
+              <Route path={`/${routesPaths.firstLesson}`} element={<FirstLesson/>}/>
+          </Routes>
+    </BrowserRouter>
   );
 }
 
