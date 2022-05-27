@@ -9,6 +9,7 @@ import {
   Typography,
   Button
 } from "@material-ui/core";
+import { Stack } from '@mui/material';
 import { Link } from "react-router-dom";
 import MenuOpenIcon from '@mui/icons-material/MenuOpen';
 import InboxIcon from '@mui/icons-material/Inbox';
@@ -29,7 +30,8 @@ const useStyles = makeStyles(()=>({
     },
     paper: {
         background: 'white',
-        width: '60%'
+        width: '40%',
+        color: 'white'
     }
 }));
 
@@ -49,7 +51,7 @@ const [openDrawer, setOpenDrawer] = useState<boolean>(false);
             
             <List>
                 <ListItem onClick={() => setOpenDrawer(false)}>
-                    <ListItemButton className="button-sidebar">
+                    <ListItemButton>
                         {/* <ListItemIcon>
                             <SendIcon/>
                         </ListItemIcon> */}
@@ -57,19 +59,25 @@ const [openDrawer, setOpenDrawer] = useState<boolean>(false);
                             <Typography>Home</Typography>
                         </Link>
                     </ListItemButton>
-                    <Divider />
+                </ListItem>
+                <Divider />
+                <ListItem onClick={() => setOpenDrawer(false)}>
                     <ListItemButton>
                         <Link to='/about' style={{ textDecoration: 'none' }}>
                             <Typography>About</Typography>
                         </Link>
                     </ListItemButton>
-                    <Divider />
-                    <ListItemButton className='button-sidebar'> 
+                </ListItem>
+                <Divider />
+                <ListItem onClick={() => setOpenDrawer(false)}>
+                    <ListItemButton> 
                         <Link to='/policy' style={{ textDecoration: 'none' }}>
                             <Typography>Policy</Typography>
                         </Link>
                     </ListItemButton>
-                    <Divider />
+                </ListItem>
+                <Divider />
+                <ListItem onClick={() => setOpenDrawer(false)}>
                     <ListItemButton> 
                         <Link to='/firstLesson' style={{ textDecoration: 'none' }}>
                             <Typography>Lesson1</Typography>
@@ -78,6 +86,7 @@ const [openDrawer, setOpenDrawer] = useState<boolean>(false);
                 </ListItem>
             </List>
         </Drawer>
+        
         <IconButton color="inherit" onClick={() => setOpenDrawer(!openDrawer)}>
             <MenuOpenIcon />
         </IconButton>

@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 import DrawerComponent from '../components/DrawerComponent';
 
 
-
 export default function Navigation() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
