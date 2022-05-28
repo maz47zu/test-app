@@ -5,19 +5,12 @@ import {
   IconButton,
   List,
   ListItem,
-  ListItemText,
-  makeStyles,
-  Typography,
-  Button
+  makeStyles
 } from "@material-ui/core";
-import { Stack } from '@mui/material';
 import { Link } from "react-router-dom";
 import MenuOpenIcon from '@mui/icons-material/MenuOpen';
-import InboxIcon from '@mui/icons-material/Inbox';
-import { color, width } from "@mui/system";
 import { ListItemButton } from "@mui/material";
 import Divider from '@mui/material/Divider';
-import SendIcon from '@mui/icons-material/Send';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import CottageIcon from '@mui/icons-material/Cottage';
 import InfoIcon from '@mui/icons-material/Info';
