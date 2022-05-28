@@ -22,6 +22,8 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import CottageIcon from '@mui/icons-material/Cottage';
 import InfoIcon from '@mui/icons-material/Info';
 import PolicyIcon from '@mui/icons-material/Policy';
+import ContactPageIcon from '@mui/icons-material/ContactPage';
+import NightShelterIcon from '@mui/icons-material/NightShelter';
 
 const useStyles = makeStyles(()=>({
     link:{
@@ -97,7 +99,7 @@ const [openDrawer, setOpenDrawer] = useState<boolean>(false);
                     <ListItem onClick={() => setOpenDrawer(false)}>
                         <ListItemButton className="button-sidebar"> 
                             <ListItemIcon>
-                                <SendIcon/>
+                                <ContactPageIcon/>
                             </ListItemIcon>
                             Contact
                         </ListItemButton>
@@ -108,13 +110,12 @@ const [openDrawer, setOpenDrawer] = useState<boolean>(false);
                     <ListItem onClick={() => setOpenDrawer(false)}>
                         <ListItemButton className="button-sidebar"> 
                             <ListItemIcon>
-                                <SendIcon/>
+                                <NightShelterIcon/>
                             </ListItemIcon>
                             Lesson1
                         </ListItemButton>
                     </ListItem>
                 </Link>
-                
             </List>
         </Drawer>
         
