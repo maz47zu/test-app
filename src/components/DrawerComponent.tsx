@@ -93,6 +93,17 @@ const [openDrawer, setOpenDrawer] = useState<boolean>(false);
                     </ListItem>
                 </Link>
                 <Divider />
+                <Link to='/contact' style={{ textDecoration: 'none' }}>
+                    <ListItem onClick={() => setOpenDrawer(false)}>
+                        <ListItemButton className="button-sidebar"> 
+                            <ListItemIcon>
+                                <SendIcon/>
+                            </ListItemIcon>
+                            Contact
+                        </ListItemButton>
+                    </ListItem>
+                </Link>
+                <Divider />
                 <Link to='/firstLesson' style={{ textDecoration: 'none' }}>
                     <ListItem onClick={() => setOpenDrawer(false)}>
                         <ListItemButton className="button-sidebar"> 
@@ -103,6 +114,7 @@ const [openDrawer, setOpenDrawer] = useState<boolean>(false);
                         </ListItemButton>
                     </ListItem>
                 </Link>
+                
             </List>
         </Drawer>
         

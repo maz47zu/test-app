@@ -33,6 +33,9 @@ export default function Navigation() {
               <Link to='/policy' style={{ textDecoration: 'none' }}>
                 <Button className='button-navbar'><Typography color="common.white">Policy</Typography></Button>
               </Link>
+              <Link to='/contact' style={{ textDecoration: 'none' }}>
+                <Button className='button-navbar'><Typography color="common.white">Contact</Typography></Button>
+              </Link>
               <Link to='/firstLesson' style={{ textDecoration: 'none' }}>
                 <Button className='button-navbar'><Typography color="common.white">Lesson1</Typography></Button>
               </Link>
