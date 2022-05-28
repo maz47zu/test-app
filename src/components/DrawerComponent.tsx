@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './drawer.css';
 import {
   Drawer,
   IconButton,
@@ -18,6 +19,9 @@ import { ListItemButton } from "@mui/material";
 import Divider from '@mui/material/Divider';
 import SendIcon from '@mui/icons-material/Send';
 import ListItemIcon from '@mui/material/ListItemIcon';
+import CottageIcon from '@mui/icons-material/Cottage';
+import InfoIcon from '@mui/icons-material/Info';
+import PolicyIcon from '@mui/icons-material/Policy';
 
 const useStyles = makeStyles(()=>({
     link:{
@@ -29,11 +33,16 @@ const useStyles = makeStyles(()=>({
         color: "white"
     },
     paper: {
-        background: 'white',
+        background: '#171229',
         width: '40%',
         color: 'white'
+    },
+    button: {
+        background: 'white',
+        color: 'black'
     }
 }));
+
 
 export default function DrawerComponent() {
 const classes = useStyles();
@@ -49,41 +58,51 @@ const [openDrawer, setOpenDrawer] = useState<boolean>(false);
             classes={{ paper: classes.paper }}
         >
             
-            <List>
-                <ListItem onClick={() => setOpenDrawer(false)}>
-                    <ListItemButton>
-                        {/* <ListItemIcon>
-                            <SendIcon/>
-                        </ListItemIcon> */}
-                        <Link to='/' style={{ textDecoration: 'none' }}>
-                            <Typography>Home</Typography>
-                        </Link>
-                    </ListItemButton>
-                </ListItem>
+            <List disablePadding={false}>
+                
+                <Link to='/' style={{ textDecoration: 'none' }}>
+                    <ListItem onClick={() => setOpenDrawer(false)}>
+                        <ListItemButton className="button-sidebar">
+                            <ListItemIcon>
+                                <CottageIcon />
+                            </ListItemIcon>
+                            Home
+                        </ListItemButton>
+                    </ListItem>
+                </Link>
+                <Divider/>
+                <Link to='/about' style={{ textDecoration: 'none' }}>
+                    <ListItem onClick={() => setOpenDrawer(false)}>
+                        <ListItemButton className="button-sidebar">
+                            <ListItemIcon>
+                                <InfoIcon />
+                            </ListItemIcon>
+                            About
+                        </ListItemButton>
+                    </ListItem>
+                </Link>
                 <Divider />
-                <ListItem onClick={() => setOpenDrawer(false)}>
-                    <ListItemButton>
-                        <Link to='/about' style={{ textDecoration: 'none' }}>
-                            <Typography>About</Typography>
-                        </Link>
-                    </ListItemButton>
-                </ListItem>
+                <Link to='/policy' style={{ textDecoration: 'none' }}>
+                    <ListItem onClick={() => setOpenDrawer(false)}>
+                        <ListItemButton className="button-sidebar">
+                            <ListItemIcon>
+                                <PolicyIcon />
+                            </ListItemIcon> 
+                            Policy
+                        </ListItemButton>
+                    </ListItem>
+                </Link>
                 <Divider />
-                <ListItem onClick={() => setOpenDrawer(false)}>
-                    <ListItemButton> 
-                        <Link to='/policy' style={{ textDecoration: 'none' }}>
-                            <Typography>Policy</Typography>
-                        </Link>
-                    </ListItemButton>
-                </ListItem>
-                <Divider />
-                <ListItem onClick={() => setOpenDrawer(false)}>
-                    <ListItemButton> 
-                        <Link to='/firstLesson' style={{ textDecoration: 'none' }}>
-                            <Typography>Lesson1</Typography>
-                        </Link>
-                    </ListItemButton>
-                </ListItem>
+                <Link to='/firstLesson' style={{ textDecoration: 'none' }}>
+                    <ListItem onClick={() => setOpenDrawer(false)}>
+                        <ListItemButton className="button-sidebar"> 
+                            <ListItemIcon>
+                                <SendIcon/>
+                            </ListItemIcon>
+                            Lesson1
+                        </ListItemButton>
+                    </ListItem>
+                </Link>
             </List>
         </Drawer>
         

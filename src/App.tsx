@@ -5,13 +5,15 @@ import { InputForm } from './InputForm';
 import Navigation from './navigation/Navigation';
 import FirstLesson from './routes/FirstLesson';
 import AboutMe from './routes/AboutMe';
+import Policy from './routes/Policy';
 
 const routesPaths = {
     about:'about',
     home:'/',
     page404:'*',
     form:'form',
-    firstLesson:'firstLesson'
+    firstLesson:'firstLesson',
+    policy: 'policy'
 }
 
 function App() {
@@ -24,6 +26,7 @@ function App() {
               <Route path={`/${routesPaths.about}`} element={<AboutMe/>}/>
               <Route path={`/${routesPaths.form}`} element={<div>Form</div>}/>
               <Route path={`/${routesPaths.firstLesson}`} element={<FirstLesson/>}/>
+              <Route path={`/${routesPaths.policy}`} element={<Policy/>}/>
           </Routes>
     </BrowserRouter>
   );
