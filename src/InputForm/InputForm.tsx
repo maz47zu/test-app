@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from "react"
 
+
 interface InputFormProps {
     defaultValue?: string;
 }
@@ -35,7 +36,7 @@ export const InputForm = (props?: InputFormProps) => {
         if (formReadyToSubmit) {
             localStorage.setItem(storageFormKey, inputValue)
         }
-    }, [inputValue])
+    }, [inputValue, formReadyToSubmit])
 
     //if localStorage is empty then data is taken from props (DefaultLogin)
     //if localStorage isn't empty then last submitted login is loaded from localStorage
@@ -55,11 +56,13 @@ export const InputForm = (props?: InputFormProps) => {
         }
     },  [props])
 
-    return <div style={{display: 'flex', flexDirection:'column',flexWrap:'wrap'}}>
+    return <div className="App-header">
+        <div style={{display: 'flex', flexDirection:'column',flexWrap:'wrap'}}>
         {displayError && <div style={{color:'#3decf2', }}>{errorMessage}</div>}
         <div>User name:</div>
         <input className='input-field' onInput={handleInputChange} value={inputValue} type="text"/>
         <br/>
         <button className='button-click' onClick={handleSubmit} disabled={!formReadyToSubmit || displayError}>Submit data</button>
+    </div>
     </div>
 }

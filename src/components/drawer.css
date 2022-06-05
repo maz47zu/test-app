@@ -1,0 +1,13 @@
+.button-sidebar{
+    background-color: #3b345c;
+    color: white;
+    border: 3px;
+    border-color: black;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.button-sidebar:hover{
+    background-color: azure;
+    color: #4f4391;
+    transition: 0.4s;
+}
