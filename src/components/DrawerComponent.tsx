@@ -5,11 +5,13 @@ import {
   IconButton,
   List,
   ListItem,
-  makeStyles
+  ListItemText,
+  makeStyles,
+  ThemeProvider
 } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import MenuOpenIcon from '@mui/icons-material/MenuOpen';
-import { ListItemButton } from "@mui/material";
+import { ListItemButton, Typography } from "@mui/material";
 import Divider from '@mui/material/Divider';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import CottageIcon from '@mui/icons-material/Cottage';
@@ -19,6 +21,30 @@ import ContactPageIcon from '@mui/icons-material/ContactPage';
 import NightShelterIcon from '@mui/icons-material/NightShelter';
 
 const useStyles = makeStyles(()=>({
+    root: {
+        "&$selected": {
+          backgroundColor: "red",
+          color: "white",
+          "& .MuiListItemIcon-root": {
+            color: "white"
+          }
+        },
+        "&$selected:hover": {
+          backgroundColor: "purple",
+          color: "white",
+          "& .MuiListItemIcon-root": {
+            color: "white"
+          }
+        },
+        "&:hover": {
+          backgroundColor: "blue",
+          color: "white",
+          "& .MuiListItemIcon-root": {
+            color: "white"
+          }
+        }
+      },
+      selected: {},
     link:{
         textDecoration:"none",
         color: "blue",
@@ -33,10 +59,17 @@ const useStyles = makeStyles(()=>({
         color: 'white'
     },
     button: {
-        background: 'white',
-        color: 'black'
+        background: '#8642d4',
+        color: 'white'
+        
+    },
+    text: {
+        color: 'white',
+        background: '#8642d4',
+        'fontFamily': 'Roboto'
     }
 }));
+
 
 
 export default function DrawerComponent() {
@@ -44,7 +77,7 @@ const classes = useStyles();
 const [openDrawer, setOpenDrawer] = useState<boolean>(false);
 
   return (
-    <div>
+    <div >
         <Drawer
             variant={'temporary'}
             open={openDrawer}
@@ -53,19 +86,20 @@ const [openDrawer, setOpenDrawer] = useState<boolean>(false);
             classes={{ paper: classes.paper }}
         >
             
-            <List disablePadding={false}>
-                
+            <List disablePadding={false} >
                 <Link to='/' style={{ textDecoration: 'none' }}>
-                    <ListItem onClick={() => setOpenDrawer(false)}>
-                        <ListItemButton className="button-sidebar">
-                            <ListItemIcon>
-                                <CottageIcon />
-                            </ListItemIcon>
-                            Home
-                        </ListItemButton>
+                    <ListItem onClick={() => setOpenDrawer(false)} 
+                    button
+                    className="button-sidebar" 
+                    >
+                                <ListItemIcon>
+                                    <CottageIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Drafts" />
+                                
                     </ListItem>
                 </Link>
-                <Divider/>
+                <Divider className='divider-sidebar'/>
                 <Link to='/about' style={{ textDecoration: 'none' }}>
                     <ListItem onClick={() => setOpenDrawer(false)}>
                         <ListItemButton className="button-sidebar">
@@ -76,7 +110,7 @@ const [openDrawer, setOpenDrawer] = useState<boolean>(false);
                         </ListItemButton>
                     </ListItem>
                 </Link>
-                <Divider />
+                <Divider className='divider-sidebar'/>
                 <Link to='/policy' style={{ textDecoration: 'none' }}>
                     <ListItem onClick={() => setOpenDrawer(false)}>
                         <ListItemButton className="button-sidebar">
@@ -87,7 +121,7 @@ const [openDrawer, setOpenDrawer] = useState<boolean>(false);
                         </ListItemButton>
                     </ListItem>
                 </Link>
-                <Divider />
+                <Divider className='divider-sidebar'/>
                 <Link to='/contact' style={{ textDecoration: 'none' }}>
                     <ListItem onClick={() => setOpenDrawer(false)}>
                         <ListItemButton className="button-sidebar"> 
@@ -98,7 +132,7 @@ const [openDrawer, setOpenDrawer] = useState<boolean>(false);
                         </ListItemButton>
                     </ListItem>
                 </Link>
-                <Divider />
+                <Divider className='divider-sidebar'/>
                 <Link to='/firstLesson' style={{ textDecoration: 'none' }}>
                     <ListItem onClick={() => setOpenDrawer(false)}>
                         <ListItemButton className="button-sidebar"> 
@@ -106,6 +140,17 @@ const [openDrawer, setOpenDrawer] = useState<boolean>(false);
                                 <NightShelterIcon/>
                             </ListItemIcon>
                             Lesson1
+                        </ListItemButton>
+                    </ListItem>
+                </Link>
+                <Divider className='divider-sidebar'/>
+                <Link to='/api' style={{ textDecoration: 'none' }}>
+                    <ListItem onClick={() => setOpenDrawer(false)}>
+                        <ListItemButton className="button-sidebar"> 
+                            <ListItemIcon>
+                                <NightShelterIcon/>
+                            </ListItemIcon>
+                            APITest
                         </ListItemButton>
                     </ListItem>
                 </Link>

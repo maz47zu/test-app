@@ -39,6 +39,9 @@ export default function Navigation() {
               <Link to='/firstLesson' style={{ textDecoration: 'none' }}>
                 <Button className='button-navbar'><Typography color="common.white">Lesson1</Typography></Button>
               </Link>
+              <Link to='/api' style={{ textDecoration: 'none' }}>
+                <Button className='button-navbar'><Typography color="common.white">APITest</Typography></Button>
+              </Link>
             </Stack>
             )}
         </Toolbar>
