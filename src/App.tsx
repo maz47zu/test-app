@@ -18,7 +18,7 @@ const routesPaths = {
     policy: 'policy',
     api:'api'
 }
-
+//added apip
 function App() {
   return (
     <BrowserRouter>
