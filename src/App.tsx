@@ -7,15 +7,18 @@ import FirstLesson from './routes/FirstLesson';
 import AboutMe from './routes/AboutMe';
 import Policy from './routes/Policy';
 import ContactPage from './routes/ContactPage';
+import ApiTest from './routes/ApiTest';
+
 const routesPaths = {
     about:'about',
     home:'/',
     page404:'*',
     contact:'contact',
     firstLesson:'firstLesson',
-    policy: 'policy'
+    policy: 'policy',
+    api:'api'
 }
-
+//added apip
 function App() {
   return (
     <BrowserRouter>
@@ -27,6 +30,7 @@ function App() {
               <Route path={`/${routesPaths.contact}`} element={<ContactPage/>}/>
               <Route path={`/${routesPaths.firstLesson}`} element={<FirstLesson/>}/>
               <Route path={`/${routesPaths.policy}`} element={<Policy/>}/>
+              <Route path={`/${routesPaths.api}`} element={<ApiTest/>}/>
           </Routes>
     </BrowserRouter>
   );

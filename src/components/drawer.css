@@ -1,13 +1,18 @@
 .button-sidebar{
-    background-color: #3b345c;
-    color: white;
-    border: 3px;
+    background-color: #8642d4 !important;
+    color: #c8c2ee !important;
+    border: 5px;
     border-color: black;
-    border-radius: 5px;
-    font-weight: bold;
+    border-radius: 3px;
+    font-weight: bold !important;
+    min-height: auto !important;
 }
 .button-sidebar:hover{
-    background-color: azure;
-    color: #4f4391;
+    background-color: azure !important;
+    color: #8642d4 !important;
     transition: 0.4s;
+}
+.divider-sidebar{
+    background-color: #4f4391;
+    width: auto;
 }
